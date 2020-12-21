@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <img src="https://github.com/MiguelRAvila/Bento/blob/master/assets/preview.png">
+  <img src="assets/preview.png">
 </p>
 
 ## Index
@@ -29,7 +29,7 @@
 -   **Clock and Date** format can be set to 24 hour (default) or 12 hour
 -   **Greetings** are easy to change and modify
 -   **Variables** for custom colors and font sizes in the `css` code
--   **Icons** all icons are from Feather Icons (Some others I made them with the Feather icons as a base)
+-   **Icons** all icons are from Feather or FontAwesome
 -   **Modular** javascript files for an easy read
 
 ## Usage:
@@ -60,12 +60,13 @@ You can change the links (and the icons too) in the HTML Code:
 
 ```html
 <a href="https://github.com/" target="blank" class="qlink__link qlink__link-1">
-    <i class="qlink__icon" data-feather="github"></i>
+    <p class="qlink__icon">
+        <i class="fab fa-github fa-2x"></i>
+    </p>
 </a>
 ```
 
 Change the link in the `href` property with the link you want. (The `target="blank"` makes the link to open a new tab with the link you choose).
-The Project uses [Feather icons](https://feathericons.com/) for the icons, and you can change them in the `data-feather=""` property with the name of the icon.
 
 ### Colors
 
@@ -114,7 +115,7 @@ if (Hr >= 19 || Hr < 5) {
 You can set your own background image with the variable `--imgbg` and set the route to the image you want It's disable by default. If you uncomment the variable, it has by default this image:
 
 <p align="center">
-  <img src="https://github.com/MiguelRAvila/Bento/blob/master/assets/previewbg.png">
+  <img src="assets/previewbg.png">
 </p>
 
 It has a black filter by default in `--imgcol`, and it'ts value is: `rgba(255, 255, 255, 0.7)` and `rgba(0, 0, 0, 0.7)` for the dark theme. You can change them and the opacity for a better experience with your image.
@@ -142,7 +143,7 @@ For setting up the Weather widget you're going to need an API Key in: `https://o
 ### Weather Icons
 
 <p align="center">
-  <img src="https://github.com/MiguelRAvila/Bento/blob/master/assets/previewico.png">
+  <img src="assets/previewico.png">
 </p>
 
 The icons by themselves have now 4 different color schemes:
