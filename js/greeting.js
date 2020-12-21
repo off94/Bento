@@ -1,13 +1,13 @@
 // Get the hour
-var hour = new Date().getHours();
+const hour = new Date().getHours();
 
 // Here you can change your name
-var name = 'Óscar';
+const name = 'Óscar';
 
 // Here you can change your greetings
-var gree1 = 'Buenos días ';
-var gree2 = 'Buenas tardes ';
-var gree3 = 'Buenas noches ';
+const gree1 = 'Buenos días ';
+const gree2 = 'Buenas tardes ';
+const gree3 = 'Buenas noches ';
 
 // Define the hours of the greetings
 if (hour >= 21 || hour < 7) {
