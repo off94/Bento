@@ -6,24 +6,21 @@
     --fss: 30px;
     --fses: 18px;
 
-    /* Light theme  */
-    --accent: #88c0d0;
-    --bg: #eceff4;
-    --sbg: #d8dee9;
-    --fg: #4c566a;
+    /* Dark theme  */
+    --accent: #5e81ac;
+    --bg: #2e3440;
+    --sbg: #434c5e;
+    --fg: #80a0c0;
 
     /* Image background  */
 
-    /* Uncoment this section to get the 
-    image wallpaper. You can also 
-    change the --imgcol value 
+    /* Uncoment this section to get the
+    image wallpaper. You can also
+    change the --imgcol value
     to make the filter to your own */
 
     /* --imgbg: url(/img/wal.jpg); */
-    --imgcol: linear-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.7)
-    );
+    --imgcol: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 @media only screen and (max-width: 68.75em) {
     :root {
@@ -33,13 +30,13 @@
     }
 }
 
-/* Dark theme  */
-.darktheme {
-    --accent: #5e81ac;
-    --bg: #2e3440;
-    --sbg: #434c5e;
-    --fg: #80a0c0;
-    --imgcol: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+/* Light theme  */
+.lighttheme {
+    --accent: #88c0d0;
+    --bg: #eceff4;
+    --sbg: #d8dee9;
+    --fg: #4c566a;
+    --imgcol: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
 }
 
 * {
@@ -169,9 +166,6 @@ body {
     font-size: var(--fsm);
     font-weight: bold;
     color: var(--fg);
-}
-
-#day {
     margin-left: 20px;
 }
 
