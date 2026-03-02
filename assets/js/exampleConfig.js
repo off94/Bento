@@ -3,7 +3,7 @@ const EXAMPLE_CONFIG = {
     name: 'Name',
     smallSizeMode: '0', // '0', '1', '2'
     bentoLayout: 'bento', // 'bento', 'lists', 'buttons'
-    imageBackground: true,
+    imageBackground: false,
     openInNewTab: true,
     lightFontGlowEnabled: false,
     darkFontGlowEnabled: false,
@@ -19,7 +19,7 @@ const EXAMPLE_CONFIG = {
     greetingNightHour: '01:00',
 
     // Weather
-    weatherKey: 'WEATHER_API_KEY',
+    weatherKey: '',  // WEATHER_API_KEY
     weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
 
     trackLocation: true, // If false or an error occurs, the app will use the lat/lon below

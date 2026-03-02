@@ -19,7 +19,10 @@ function saveConfig(config) {
 function loadConfig(defaultConfig = {}) {
 	try {
 		let raw = localStorage.getItem(STORAGE_KEY);
-		if (!raw) return structuredClone(defaultConfig);
+		if (!raw) {
+			console.error('loadConfig error, no existe config en localStorage, usando default');
+			return structuredClone(defaultConfig);
+		}
 		if (window.LZString && window.LZString.decompressFromUTF16) {
 			raw = window.LZString.decompressFromUTF16(raw);
 		}
