@@ -1,0 +1,20 @@
+/* go to firefox://about:support and enable toolkit.legacyUserProfileCustomizations.stylesheets */
+/* put file in mozilla/profile/chrome/userContent.css */
+/* Changes to userContent.css won't get picked up by firefox until restart */
+@-moz-document domain("example.com") {
+    :root {
+        --light-font-color: #4c566a !important;
+        --light-font-hover-color: #4c566a !important;
+        --light-card-hover-color: #88c0d0 !important;
+        --light-card-color: #d8dee9 !important;
+        --light-background-color: #eceff4 !important;
+        --light-img-background-tint: #ffffff !important;
+
+        --dark-font-color: #80a0c0 !important;
+        --dark-font-hover-color: #80a0c0 !important;
+        --dark-card-hover-color: #5e81ac !important;
+        --dark-card-color: #434c5e !important;
+        --dark-background-color: #2e3440 !important;
+        --dark-img-background-tint: #000000 !important;
+    }
+}
