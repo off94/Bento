@@ -37,8 +37,9 @@
 
     // Evento global: muestra al teclear fuera del propio input
     document.addEventListener('keydown', (e) => {
-        // no interferir cuando ya se está escribiendo en el input
-        if (document.activeElement === input) return;
+        const configPanel = document.getElementById('config-panel').contains(document.activeElement);
+        // no interferir cuando ya se está escribiendo en el input o es un input del panel de configuración
+        if (configPanel || document.activeElement === input) return;
         // ignorar combinaciones con modificadores
         if (e.ctrlKey || e.metaKey || e.altKey) return;
 
