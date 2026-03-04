@@ -88,7 +88,7 @@
   );
 
   --font-color: var(--auto-font-color);
-  --font-hover-color: var(--auto-font-color);
+  --font-hover-color: var(--auto-font-hover-color);
   --card-hover-color: var(--auto-card-hover-color);
   --card-color: var(--auto-card-color);
   --background-color: var(--auto-background-color);
@@ -98,7 +98,7 @@
 
 .light-theme {
   --font-color: var(--light-font-color);
-  --font-hover-color: var(--light-font-color);
+  --font-hover-color: var(--light-font-hover-color);
   --card-hover-color: var(--light-card-hover-color);
   --card-color: var(--light-card-color);
   --background-color: var(--light-background-color);
@@ -108,7 +108,7 @@
 
 .dark-theme {
   --font-color: var(--dark-font-color);
-  --font-hover-color: var(--dark-background-color);
+  --font-hover-color: var(--dark-font-hover-color);
   --card-hover-color: var(--dark-card-hover-color);
   --card-color: var(--dark-card-color);
   --background-color: var(--dark-background-color);
