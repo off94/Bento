@@ -25,16 +25,26 @@
   --list-item-size: clamp(0.5rem, 1.75vmin, 2.5rem);
   --icon-size: clamp(32px, 4vmin, 64px);
 
-  --img-background: url(../img/background.jpg);
 
   /* vvv Edit dinamically these variables to custom theme vvv */
     /* vvv Edit dinamically these variables in userContent.css vvv */
+  --auto-font-color: #4c566a;
+  --auto-font-hover-color: #4c566a;
+  --auto-card-hover-color: #88c0d0;
+  --auto-card-color: #d8dee9;
+  --auto-background-color: #eceff4;
+  --auto-img-background-tint: #ffffff;
+  --auto-glow-color-value: #4c566a;
+    /* ^^^ Edit dinamically these variables in userContent.css ^^^ */
+
+    /* vvv Edit dinamically these variables in WEB CONFIG / localStorage vvv */
   --light-font-color: #4c566a;
   --light-font-hover-color: #4c566a;
   --light-card-hover-color: #88c0d0;
   --light-card-color: #d8dee9;
   --light-background-color: #eceff4;
   --light-img-background-tint: #ffffff;
+  --light-glow-color-value: #4c566a;
 
   --dark-font-color: #80a0c0;
   --dark-font-hover-color: #80a0c0;
@@ -42,30 +52,51 @@
   --dark-card-color: #434c5e;
   --dark-background-color: #2e3440;
   --dark-img-background-tint: #000000;
-    /* ^^^ Edit dinamically these variables in userContent.css ^^^ */
+  --dark-glow-color-value: #80a0c0;
 
-    /* vvv Edit dinamically these variables in WEB CONFIG / localStorage vvv */
   --image-background-enabled: 0;
+  --image-background-path: '';
   --light-glow-enabled: 0;
+  --light-img-background-tint-enabled: 0;
   --dark-glow-enabled: 0;
+  --dark-img-background-tint-enabled: 0;
+  --auto-glow-enabled: 0;
+  --auto-img-background-tint-enabled: 0;
   --num-columns-buttons-left: 3;
   --num-columns-buttons-right: 3;
     /* ^^^ Edit dinamically these variables in WEB CONFIG / localStorage ^^^ */
   /* ^^^ Edit dinamically these variables to custom theme ^^^ */
 
-  --light-glow-color: color-mix(in srgb, var(--light-font-color) calc(var(--light-glow-enabled) * 100%), transparent);
-  --dark-glow-color: color-mix(in srgb, var(--dark-font-color) calc(var(--dark-glow-enabled) * 100%), transparent);
+  --img-background: var(--image-background-path);
+  --light-glow-color: color-mix(in srgb, var(--light-glow-color-value) calc(var(--light-glow-enabled) * 100%), transparent);
+  --dark-glow-color: color-mix(in srgb, var(--dark-glow-color-value) calc(var(--dark-glow-enabled) * 100%), transparent);
+  --auto-glow-color: color-mix(in srgb, var(--auto-glow-color-value) calc(var(--auto-glow-enabled) * 100%), transparent);
   --light-font-glow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 8px var(--light-glow-color);
   --dark-font-glow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 8px var(--dark-glow-color);
+  --auto-font-glow: 1px 1px 2px rgba(0, 0, 0, 0.5), 0 0 8px var(--auto-glow-color);
   --light-img-background-gradient: linear-gradient(
-    color-mix(in srgb, var(--light-img-background-tint) 70%, transparent),
-    color-mix(in srgb, var(--light-img-background-tint) 70%, transparent)
+    color-mix(in srgb, var(--light-img-background-tint) calc(var(--light-img-background-tint-enabled)*70%), transparent),
+    color-mix(in srgb, var(--light-img-background-tint) calc(var(--light-img-background-tint-enabled)*70%), transparent)
   );
   --dark-img-background-gradient: linear-gradient(
-    color-mix(in srgb, var(--dark-img-background-tint) 85%, transparent),
-    color-mix(in srgb, var(--dark-img-background-tint) 85%, transparent)
+    color-mix(in srgb, var(--dark-img-background-tint) calc(var(--dark-img-background-tint-enabled)*85%), transparent),
+    color-mix(in srgb, var(--dark-img-background-tint) calc(var(--dark-img-background-tint-enabled)*85%), transparent)
+  );
+  --auto-img-background-gradient: linear-gradient(
+    color-mix(in srgb, var(--auto-img-background-tint) calc(var(--auto-img-background-tint-enabled)*75%), transparent),
+    color-mix(in srgb, var(--auto-img-background-tint) calc(var(--auto-img-background-tint-enabled)*75%), transparent)
   );
 
+  --font-color: var(--auto-font-color);
+  --font-hover-color: var(--auto-font-color);
+  --card-hover-color: var(--auto-card-hover-color);
+  --card-color: var(--auto-card-color);
+  --background-color: var(--auto-background-color);
+  --img-background-gradient: var(--auto-img-background-gradient);
+  --font-glow: var(--auto-font-glow);
+}
+
+.light-theme {
   --font-color: var(--light-font-color);
   --font-hover-color: var(--light-font-color);
   --card-hover-color: var(--light-card-hover-color);
@@ -611,6 +642,8 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
 .setting-textarea,

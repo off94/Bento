@@ -1,36 +1,71 @@
-let darkTheme = localStorage.getItem('darkTheme');
+let theme = localStorage.getItem('theme');
 const themeToggle = document.querySelector('#theme-btn');
 const themeSun = document.querySelector('#theme-btn .theme-icon.sun');
 const themeMoon = document.querySelector('#theme-btn .theme-icon.moon');
+const themeAuto = document.querySelector('#theme-btn .theme-icon.auto');
 
 const enableDark = () => {
+	cleanTheme();
 	document.body.classList.add('dark-theme');
-	localStorage.setItem('darkTheme', 'enabled');
-	themeSun.style.display = '';
-	themeMoon.style.display = 'none';
-};
-
-const disableDark = () => {
-	document.body.classList.remove('dark-theme');
-	localStorage.setItem('darkTheme', null);
-	themeSun.style.display = 'none';
+	localStorage.setItem('theme', 'dark');
 	themeMoon.style.display = '';
 };
 
-if (darkTheme === 'enabled') {
-	document.body.classList.add('no-transition');
-	enableDark();
-	document.body.classList.remove('no-transition');
-} else {
-	disableDark();
+const enableLight = () => {
+	cleanTheme();
+	document.body.classList.add('light-theme');
+	localStorage.setItem('theme', 'light');
+	themeSun.style.display = '';
+};
+
+const enableAuto = () => {
+	cleanTheme();
+	document.body.classList.add('auto-theme');
+	localStorage.setItem('theme', 'auto');
+	themeAuto.style.display = '';
+};
+
+const cleanTheme = () => {
+	document.body.classList.remove('auto-theme');
+	document.body.classList.remove('light-theme');
+	document.body.classList.remove('dark-theme');
+	localStorage.setItem('theme', null);
+	themeSun.style.display = 'none';
+	themeMoon.style.display = 'none';
+	themeAuto.style.display = 'none';
 }
 
-themeToggle.addEventListener('click', () => {
-	darkTheme = localStorage.getItem('darkTheme');
-	if (darkTheme !== 'enabled') {
+switch (theme) {
+	case 'dark':
 		enableDark();
-	} else {
-		disableDark();
+		break;
+	case 'light':
+		enableLight();
+		break;
+	case 'auto':
+		enableAuto();
+		break;
+	default:
+		enableDark();
+		break;
+}
+
+
+themeToggle.addEventListener('click', () => {
+	theme = localStorage.getItem('theme');
+	switch (theme) {
+		case 'dark':
+			enableAuto();
+			break;
+		case 'light':
+			enableDark();
+			break;
+		case 'auto':
+			enableLight();
+			break;
+		default:
+			enableDark();
+			break;
 	}
 });
 
@@ -59,7 +94,7 @@ switch (CONFIG.autoChangeTheme) {
 		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			enableDark();
 		} else {
-			disableDark();
+			enableLight();
 		}
 		break;
 	case 'hour':
@@ -80,7 +115,7 @@ switch (CONFIG.autoChangeTheme) {
 		) {
 			enableDark();
 		} else {
-			disableDark();
+			enableLight();
 		}
 		break;
 	case 'no':

@@ -3,10 +3,31 @@ const EXAMPLE_CONFIG = {
     name: 'Name',
     smallSizeMode: '0', // '0', '1', '2'
     bentoLayout: 'bento', // 'bento', 'lists', 'buttons'
-    imageBackground: false,
     openInNewTab: true,
+
+    // Tema
+    lightFontColor: '#000000',
+    lightFontHoverColor: '#000000',
+    lightCardColor: '#000000',
+    lightCardHoverColor: '#000000',
+    lightBackgroundColor: '#000000',
+    lightBackgroundImgTint: '#000000',
+    lightFontGlow: '#000000',
+    darkFontColor: '#000000',
+    darkFontHoverColor: '#000000',
+    darkCardColor: '#000000',
+    darkCardHoverColor: '#000000',
+    darkBackgroundColor: '#000000',
+    darkBackgroundImgTint: '#000000',
+    darkFontGlow: '#000000',
+    imageBackground: false,
+    imageBackgroundPath: 'background.jpg',
     lightFontGlowEnabled: false,
+    lightBackgroundImgTintEnabled: false,
     darkFontGlowEnabled: false,
+    darkBackgroundImgTintEnabled: false,
+    autoFontGlowEnabled: false,
+    autoBackgroundImgTintEnabled: false,
 
     // Greetings (insert $NAME where you want to show the name)
     greetingMorning: ['Hi, $NAME'],
